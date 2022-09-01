@@ -1,3 +1,4 @@
 ---
-- name: Run a command under PowerShell
-  win_shell: Get-Service -Name service | Stop-Service
+  - name: Run a command under PowerShell
+    host: all
+    win_shell: Get-Service -Name service | Stop-Service
