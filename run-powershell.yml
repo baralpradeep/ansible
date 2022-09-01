@@ -20,7 +20,7 @@
         name: '{{ item.name }}'
         password: '{{ item.password }}'
         groups: LocalGroup
-        update_password: no
+        update_password: on_create
         password_never_expires: yes
       loop:
       - name: User1
