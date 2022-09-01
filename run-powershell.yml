@@ -1,5 +1,5 @@
 ---
-- name: Add a user
+- name: run powershell
   hosts: all
   gather_facts: false
   tasks:
