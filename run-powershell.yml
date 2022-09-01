@@ -22,11 +22,11 @@
         groups: LocalGroup
         update_password: no
         password_never_expires: yes
-        loop:
-          - name: User1
-            password: Password1
-          - name: User2
-            password: Password2
+      loop:
+      - name: User1
+        password: Password1
+      - name: User2
+        password: Password2
 
     - name: Create Development folder
       win_file:
