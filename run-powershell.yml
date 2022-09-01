@@ -1,5 +1,3 @@
 ---
-- name: Run basic PowerShell script
-  ansible.windows.win_powershell:
-    script: |
-      echo "Hello World"
+- name: Run a command under PowerShell
+  win_shell: Get-Service -Name service | Stop-Service
