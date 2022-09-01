@@ -4,4 +4,8 @@
   gather_facts: false
   tasks:
     - name: Add User
-      win_shell: Get-Service -Name service | Stop-Service
+      #win_shell: Get-Service -Name service | Stop-Service
+      win_shell: |
+        $text = Get-Content C:\Temp\test.txt
+        $text += ' additional text'
+        Set-Content -Path C:\Temp\test2.txt -Value $text
