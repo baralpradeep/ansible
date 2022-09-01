@@ -7,10 +7,9 @@
 #  tasks:
 #    - name: Run powershell script
 #  script: files/helloworld.ps1
-
-  - name: Run multi-lined shell commands
-    hosts: all
-    win_shell: |
-        $text = Get-Content C:\Temp\test.txt
-        $text += ' General Kenobi....you are a bold one'
-        Set-Content -Path C:\Temp\test2.txt -Value $text
+- name: Run multi-lined shell commands
+  hosts: all
+  win_shell: |
+    $text = Get-Content C:\Temp\test.txt
+    $text += ' General Kenobi....you are a bold one'
+    Set-Content -Path C:\Temp\test2.txt -Value $text
