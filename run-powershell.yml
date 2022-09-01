@@ -9,3 +9,40 @@
         $text = Get-Content C:\Temp\test.txt
         $text += ' additional text'
         Set-Content -Path C:\Temp\test2.txt -Value $text
+
+- name: Create local group to contain new users
+  win_group:
+    name: LocalGroup
+    description: Allow access to C:\Development folder
+
+- name: Create local user
+  win_user:
+    name: '{{ item.name }}'
+    password: '{{ item.password }}'
+    groups: LocalGroup
+    update_password: no
+    password_never_expires: yes
+  loop:
+  - name: User1
+    password: Password1
+  - name: User2
+    password: Password2
+
+- name: Create Development folder
+  win_file:
+    path: C:\Development
+    state: directory
+
+- name: Set ACL of Development folder
+  win_acl:
+    path: C:\Development
+    rights: FullControl
+    state: present
+    type: allow
+    user: LocalGroup
+
+- name: Remove parent inheritance of Development folder
+  win_acl_inheritance:
+    path: C:\Development
+    reorganize: yes
+    state: absent
