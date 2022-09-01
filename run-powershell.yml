@@ -1,4 +1,7 @@
 ---
-  - name: Run a command underPowerShell
-    hosts: all
+- name: Add a user
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Add User
       win_shell: Get-Service -Name service | Stop-Service
