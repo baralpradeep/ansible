@@ -52,5 +52,5 @@
 
     - name: uninstall tightvnc
       #win_shell: $MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "TightVNC"}; $MyApp.Uninstall()
-      win_shell: $MyApp = Get-Package -Provider Programs -IncludeWindowsInstaller -Name "Garmin Express"; $MyApp.Uninstall()
+      win_shell: $MyApp = Get-Package -Provider Programs -IncludeWindowsInstaller -Name "TightVNC"; $MyApp.Uninstall()
 
