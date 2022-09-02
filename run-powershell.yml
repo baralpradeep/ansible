@@ -46,3 +46,6 @@
         path: C:\Development
         reorganize: yes
         state: absent
+    
+    - name: get list of softwares. 
+      win_shell: Get-WmiObject -Class Win32_Product | Select-Object -Property Name
