@@ -51,4 +51,5 @@
       win_shell: Get-WmiObject -Class Win32_Product | Select-Object -Property Name
 
     - name: uninstall tightvnc
-      win_shell: TightVNC.Uninstall()
+      win_shell: $MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "TightVNC"}
+      win_shell: $MyApp.Uninstall()
