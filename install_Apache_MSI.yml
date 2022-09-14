@@ -25,6 +25,6 @@
 
           - /install
 
-          - /passive
+          #- /passive
 
-          - /norestart
+          #- /norestart
