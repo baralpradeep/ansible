@@ -16,15 +16,4 @@
 
 
     - name: Install MSI
-
-      win_package: 
-
-        path: C:\ansible_examples\httpd-2.2.25-win32-x86-no_ssl.msi
-
-        arguments:
-
-          - /install
-
-          #- /passive
-
-          #- /norestart
+      win_command: C:\Windows\System32\msiexec.exe /i C:\ansible_examples\httpd-2.2.25-win32-x86-no_ssl.msi /qn /norestart
