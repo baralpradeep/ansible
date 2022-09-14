@@ -1,20 +1,20 @@
 ---
-- hosts: all 
-  tasks: 
-  - name: Get disk facts
-    win_disk_facts:
-
-  - name: Output first disk size
-    debug:
-      var: ansible_facts.disks[0].size
-
-  - name: Convert first system disk into various formats
-    debug:
-      msg: '{{ disksize_gib }} vs {{ disksize_gib_human }}'
-    vars:
-      # Get first system disk
-      disk: '{{ ansible_facts.disks|selectattr("system_disk")|first }}'
-
-      # Show disk size in Gibibytes
-      disksize_gib_human: '{{ disk.size|filesizeformat(true) }}' 
-      disksize_gib: '{{ (disk.size/1024|pow(3))|round|int }} GiB'
+- hosts: all
+  #connection: local
+  gather_facts: yes
+  vars:
+    ansible_fact5:
+      disks:
+        - guid: 1,
+          partitions:
+            - drive_letter: 'A'
+            - drive_letter: 'B'
+        - guid: 2,
+          partitions:
+            - drive_letter: 'C'
+            - drive_letter: 'D'
+  tasks:
+    - name: with_subelements -> loop
+      debug:
+        msg: "Disk {{ item.0.guid }} - Drive {{ item.1.drive_letter }}"
+      loop: "{{ ansible_fact5.disks | subelements('partitions') }}"
