@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+
+  tasks:
+  - name: remove a file (check mode)
+    win_file:
+      path: C:\temp
+      state: absent
+    register: remove_file_check
+    check_mode: yes
