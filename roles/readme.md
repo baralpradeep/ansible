@@ -1,4 +1,10 @@
-![image](https://user-images.githubusercontent.com/52475976/190490479-a4d0353f-4868-4a8c-a3dc-f380e311c141.png)
+Roles:
 
-![image](https://user-images.githubusercontent.com/52475976/190494559-d9592f89-ced6-4431-bae2-e12e94254627.png)
+Variables defined within a role ( using the defaults or vars dire) may be accessed across roles. 
+
+
+you may still pass variables on the command line with -e flag to use in  a role
+
+
+
 
