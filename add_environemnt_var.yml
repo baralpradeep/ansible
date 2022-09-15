@@ -1,0 +1,9 @@
+---
+- hosts: all 
+  tasks:
+   - name: Set an environment variable for all users
+     win_environment:
+       state: present
+       name: NewVariable
+       value: New Value
+       level: machine
