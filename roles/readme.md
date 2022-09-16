@@ -7,6 +7,7 @@ you may still pass variables on the command line with -e flag to use in  a role
 
 
 
-To create automatic role directory 
+################## 
+### To create automatic role directory ###
 
 ansible-galaxy init apache
