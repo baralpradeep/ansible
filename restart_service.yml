@@ -9,8 +9,8 @@
        name: OpenSSH SSH Server
        state: stopped
    - name: Set timezone to 'Central Standard Time' (GMT-06:00)
-     win_timezone:
-       community.general.timezone: Central Standard Time
+     community.general.timezone:
+       name: Central Standard Time
 
 
 
