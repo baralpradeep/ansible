@@ -1,6 +1,8 @@
 
 ---
 - hosts: all
+  collections:
+    - community.windows
   tasks:
    - name: Restart a service
      win_service:
