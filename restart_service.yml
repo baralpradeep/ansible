@@ -10,5 +10,7 @@
        state: stopped
    - name: Set timezone to 'Central Standard Time' (GMT-06:00)
      win_timezone:
-       timezone: Central Standard Time
+       community.general.timezone: Central Standard Time
+
+
 
