@@ -4,5 +4,5 @@
   tasks:
    - name: Restart a service
      win_service:
-       name: spooler
-       state: restarted
+       name: OpenSSH SSH Server
+       state: stopped
