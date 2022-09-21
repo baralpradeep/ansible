@@ -13,5 +13,8 @@
  #    win_command: 'tzutil /s "Eastern Standard Time_dstoff"'
  #    community.windows.win_timezone:
  #      timezone: Central Standard Time
-
+   - name: Set the region format to English United States
+     community.windows.win_region:
+       format: en-US
+       copy_settings: yes
 
