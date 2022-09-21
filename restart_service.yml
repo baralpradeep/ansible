@@ -17,4 +17,15 @@
      win_region:
        format: en-US
        copy_settings: yes
+       
+   - name: Get product id and product key
+     community.windows.win_product_facts:
+
+   - name: Display Windows edition
+     debug:
+       var: ansible_os_license_edition
+
+   - name: Display Windows license status
+     debug:
+       var: ansible_os_license_status
 
