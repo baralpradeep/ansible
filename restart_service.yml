@@ -34,8 +34,10 @@
        paths: C:\Temp
        recurse: yes
      register: output
-   - debug:
-            msg: "{{  output.stdout  }}"
+    
+   - name: output 
+     debug:
+       msg: "{{  output.stdout  }}"
        #follow: yes
        #file_type: directory
 #       - D:\Temp
