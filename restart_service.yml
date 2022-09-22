@@ -34,5 +34,5 @@
        paths: C:\Temp
        recurse: yes
        #follow: yes
-       file_type: directory
+       #file_type: directory
 #       - D:\Temp
