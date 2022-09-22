@@ -33,5 +33,6 @@
      ansible.windows.win_find:
        paths: C:\
        recurse: yes
-       follow: yes
+       #follow: yes
+       file_type: directory
 #       - D:\Temp
