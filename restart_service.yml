@@ -31,7 +31,7 @@
 
    - name: Find files in multiple paths
      ansible.windows.win_find:
-       paths: C:\
+       paths: C:\Temp
        recurse: yes
        #follow: yes
        file_type: directory
