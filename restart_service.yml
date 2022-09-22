@@ -34,8 +34,6 @@
        paths: C:\Temp
        recurse: yes
      register: output
-    
-   - name: output 
      debug:
        msg: "{{  output.stdout  }}"
        #follow: yes
