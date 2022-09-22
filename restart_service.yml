@@ -29,3 +29,8 @@
      debug:
        var: ansible_os_license_status
 
+   - name: Find files in multiple paths
+     ansible.windows.win_find:
+       paths:
+       - C:\Temp
+       - D:\Temp
