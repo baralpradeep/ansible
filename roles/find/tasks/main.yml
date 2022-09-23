@@ -1,8 +1,8 @@
 ---
     - name: Look for files on host
       win_find:
-        paths: #"{{paths}}"
-          - C:\Temp
+        paths: "{{paths}}"
+         # - C:\Temp
         #patterns: [ 'specific.file' ]
         recurse: yes
       register: apps_found
