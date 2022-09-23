@@ -1,4 +1,6 @@
 ---
 - hosts: all
+  vars:
+    paths=C:/scripts
   roles:
     - role: find
