@@ -9,7 +9,7 @@
         paths:
           - C:\Program Files
         #patterns: [ 'specific.file' ]
-        recurse: yes
+        #recurse: yes
       register: apps_found
 
     - name: Get the content of found files from host
