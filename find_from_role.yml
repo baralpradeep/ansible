@@ -1,6 +1,6 @@
 ---
 - hosts: all
   vars:
-    paths=C:/scripts
+    paths: "C:/scripts"
   roles:
     - role: find
