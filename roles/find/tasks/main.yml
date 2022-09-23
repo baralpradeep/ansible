@@ -1,6 +1,6 @@
 ---
 - name: Show found app files
-  hosts: all
+  #hosts: all
   vars:
     paths:
       - C:\Temp
