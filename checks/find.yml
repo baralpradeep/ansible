@@ -1,4 +1,8 @@
 ---
+vars:
+  paths:
+    - C:\Temp
+    - C:\scripts
 - name: Show found app files
   hosts: all
 
@@ -6,8 +10,8 @@
 
     - name: Look for files on host
       win_find:
-        paths:
-          - C:\Users\user\Downloads
+        paths: "{{paths}}"
+ #         - C:\Users\user\Downloads
         #patterns: [ 'specific.file' ]
         recurse: yes
       register: apps_found
