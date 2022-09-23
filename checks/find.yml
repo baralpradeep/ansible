@@ -1,11 +1,10 @@
 ---
-vars:
-  paths:
-    - C:\Temp
-    - C:\scripts
 - name: Show found app files
   hosts: all
-
+  vars:
+    paths:
+      - C:\Temp
+      - C:\scripts
   tasks:
 
     - name: Look for files on host
