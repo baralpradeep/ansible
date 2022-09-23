@@ -1,0 +1,27 @@
+---
+- name: Show found app files
+  hosts: all
+  vars:
+    paths:
+      - C:\Temp
+      - C:\scripts
+  tasks:
+
+    - name: Look for files on host
+      win_find:
+        paths: "{{paths}}"
+ #         - C:\Users\user\Downloads
+        #patterns: [ 'specific.file' ]
+        recurse: yes
+      register: apps_found
+
+    - name: Get the content of found files from host
+      slurp:
+        src: "{{ item }}"
+      loop: "{{ apps_found | json_query('files[].path') }}"
+      register: slurped_files
+
+    - name: Display result
+      debug:
+        msg: "Found application {{ item.item | win_dirname | win_basename }} with contents: {{ item.content | b64decode }}"
+      loop: "{{ slurped_files.results }}"
