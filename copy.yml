@@ -8,7 +8,7 @@
 
     win_copy:
 
-      src: C:\output.pdf
+      src: C:\scripts
 
       dest: C:\ansible_examples\
      
