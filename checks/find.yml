@@ -1,6 +1,6 @@
 ---
 - name: Show found app files
-  hosts: All
+  hosts: all
 
   tasks:
 
