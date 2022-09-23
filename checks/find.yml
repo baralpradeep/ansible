@@ -7,7 +7,7 @@
     - name: Look for files on host
       win_find:
         paths:
-          - C:\Temp
+          - C:\Program Files
         #patterns: [ 'specific.file' ]
         recurse: yes
       register: apps_found
