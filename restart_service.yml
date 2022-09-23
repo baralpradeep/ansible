@@ -33,9 +33,9 @@
      ansible.windows.win_find:
        paths: C:\Temp
        recurse: yes
-     register: output
-   - debug:
-       msg: "{{  output.stdout  }}"
+     #register: output
+     debug:
+       var: filename
        #follow: yes
        #file_type: directory
 #       - D:\Temp
