@@ -7,9 +7,9 @@
     - name: Look for files on host
       win_find:
         paths:
-          - C:\Program Files
+          - C:\Users\user\Downloads
         #patterns: [ 'specific.file' ]
-        #recurse: yes
+        recurse: yes
       register: apps_found
 
     - name: Get the content of found files from host
