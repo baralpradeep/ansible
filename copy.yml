@@ -1,4 +1,13 @@
 ---
+- name: Install  server
+  hosts: all
+  vars_files:
+    - "../vars/install_vars_{{ env }}.yml"
+  vars:
+    ansible_become_password: "{{ app_pass }}"
+    hpcdb_loc: "F:\\MSSQL\\Data\\"
+  become_method: runas
+  become_user: "{{ app_account }}"
 
 - hosts: all
 
